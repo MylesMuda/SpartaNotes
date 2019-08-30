@@ -1,0 +1,146 @@
+Friday 30th AUG
+
+Github branches
+		Master branch ==> 	default place out work gets put when we first push our work onto github
+							Final production code
+
+			Dev Branch: Joint work of all developers not yet in production
+
+				Feature branch: building new features to add to the product
+								bug fixes: issues can be logged on your github repo
+
+		git status - shows which branch you are on
+
+		git branch <name> - makes a new branch
+
+		git checkout <name> - move to that branch
+
+Lab walkthrough
+	
+	change to dev branch
+	update readme file
+	push changes to the new dev branch online
+	Differences between the dev and master branches, can be viewed a) online b) offline
+
+	To merge work done in the dev so it's also the same in the master we create a PULL REQUEST (online)
+
+	In the real world you would add collaborators and assign a reviewer for  your work.
+	Create pull request -> Reviewer notified and will check your work. 
+
+	ONLINE: Master/Dev the same
+	OFFLINE: Different. git pull on the master to fix this.
+
+	git checkout master
+	git pull
+				BOTH repos are the SAME
+
+
+=============================================
+
+Presentation Skills
+
+	As a developer, you may have to present your work to others. 
+		1) Communication of fresh work
+		2) Budget/Timescale/Planning: you may have to 'pitch' ideas to win favour.
+		3) Stakeholder : non-tech people with an interest in your work
+				Investor, manager, public??, competitor??
+
+
+	C 	Confidence
+	M 	Manner: Posture, body language, clarity of voice, intonation
+	A 	Attitude: Posture of your MIND
+	D 	Diligence: Thorough, compitent work
+	E	Enthusiasm: Bring energy to the room
+
+Writing (longer essay)
+	
+	Rule of 5
+
+		Introduction, background of topic, transition into the detail, fine detail, conclusions/findings
+
+Slides
+
+	KISS	Keep it simple, stupid!
+
+	Rule of 3: Introduction, Topic list, Body of slides (topics)
+
+Interviews
+	
+	Elevator pitch: just to lose some nerves in public speaking!
+
+	S 	Situation: set scene
+	T 	Task: goal that was set
+	A 	Action: what you did
+	R 	Report: results/summary
+
+	Critical to get right:
+
+		a) CV
+		b) Cover Letter
+
+Addition to Communication lesson Tues
+
+	Email
+
+		1) Formal email to manager with a formal request
+
+		2) Regular, informal email 
+
+Risk Management
+	
+	For big projects there is a high risk of failure, either as a whole or of components.
+
+	We can attempt to 'monetise' (put into financial terms) the possible things which may go wrong, and the cost if they do. 
+
+	Risk : % chance of event Y happening with loss £xxx.00
+
+			Develop product: 20% chance competitor will beat us to it, will reduce sales by £1 mil. (eg of risk)
+
+	Response : 
+			
+			Ignore / Accept risk and carry on.
+			Mitigate : take steps to reduce the risk. (Road: rebuild a traffic collision hotspot)
+			Insure: against 'burglary', theft
+			Avoid : Do something else if it's too risky (build another product instead)
+
+Financial Terms
+	
+	ROI : Return on investment : 7% ROI means if you invest £100, you get £107 back.
+	Cost-benefit analysis : Project - what will it cost and what are benefits to business.
+
+			Tangible:		Measure, Quantify
+			Intangible: 	Reputation, public relations, etc.
+
+
+Project Management
+	
+	BAU Business as usual -> Normal Work
+
+	Projects are:
+
+		Unique
+		Transient
+		Focused
+		Clear Goal
+		Normally have phases
+		Often hire contractors or specialists to get the work done
+		Often are complex
+
+	Creating high quality takes time and money
+		Triple constraint
+
+			Balance 	1) Quality 	2) Time 	3) Money
+
+	IT is at the heart of most projects today
+		POPIT
+
+			People
+			Organisation
+			Processes
+			IT
+
+Project Stages
+
+		Initiation, planning, execution, monitoring, completion
+			
+
