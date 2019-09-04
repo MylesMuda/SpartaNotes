@@ -1,0 +1,249 @@
+20190903
+------------
+OOP Revision
+
+private
+public
+
+class x
+{
+	private field y
+
+	public property z {get : set}
+
+	public void method01(int param1, string param2, bool param3=false, out string a){} optionals should be at the end
+
+	(int x, string y) Tuple - on-the-fly data type
+}
+
+class: 		The object blueprint/template. Like an architects plan for a new building/lego instructions
+instance: 	An object created from a class.
+			Chrome can run many instances of a class
+new:		Var instance01 = myNewClass(); calls the constructor method to create an instance of an object	
+var:		General data type
+C#:			Strongly typed language, all types must be verified at compile time
+Javascript: Loosely typed, data type not verified until RUNTIME
+'dynamic' 	Keyword - turns the data type same as javascript: able to change on the fly
+field:		
+property
+method: 	A function with a return value
+			void: return nothing, does a thing
+			string DoThis(){} returns a string
+
+```cs
+	using System;
+
+namespace lab08
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            object o = 10;
+
+            Console.WriteLine(o);
+            Console.WriteLine(o.GetType());
+
+            o = "A String";
+
+            Console.WriteLine(o);
+            Console.WriteLine(o.GetType());
+
+            o = new int[1, 2, 3];
+
+            Console.WriteLine(o);
+            Console.WriteLine(o.GetType());
+
+            dynamic obj2 = 10;
+            obj2 = "a String";
+            obj2 = new int[1, 2, 3];
+        }
+    }
+}
+```
+
+# Naming
+camelCaseLikeThis:	private fields
+PascalCaseLikeThis:	1) methods (verb e.g. DoThis)  
+					2) class names
+					3) Properties public string Name {get;set;} name is PascalCase
+
+_privateField:		underscore prefix : clearly tell everyone it's private
+
+SQL_column_name_like_this_snake_case
+
+File name and Folder names and Paths to folder
+
+	C:\Parent\Child\file.txt	path
+		Avoid spaces always.
+		"Strings with spaces always enclosed in quotes"
+	
+html-webpage-always-write-like-this-kebab-case.html
+
+%20 means someone has put a space in a html page which is no good!
+
+
+
+# Constructor
+
+Class myClass{
+	
+	public string MyName {get;set;}
+	public string DateOfBirth {get;set;}
+	private string _NINO; //national insurance number
+
+}
+
+	//instanciate
+
+	var instance01 = new MyClass(); 	new keyword : invoking a special method called the constructor method
+										used when CONSTRUCTING new instance of an object.
+
+```cs
+using System;
+
+namespace lab_09_constructor
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Constructors save lots of lines of code, no need to do getters and setters for each field
+            var merc01 = new Mercedes("CHASSIS1234ABC", "Silver", 2500); // calling the default constructor  
+            var merc02 = new Mercedes();
+
+            var aClass = new AClass("Chassis123", "Blue", 3000);
+            var a104 = new A104("Chassis342", "Green");
+        }
+
+        class Mercedes
+        {
+            protected string engineChassisID;
+            public string Colour { get; set; }
+            public int Length { get; set; }
+
+            public Mercedes() { } //Default constructor : EXPLICITLY CODE IT
+
+            public Mercedes(string engineChassisID, string colour, int length)
+            {
+                this.engineChassisID = engineChassisID;
+                this.Colour = colour;
+                this.Length = length;
+            }
+        }
+
+        class AClass : Mercedes
+        { 
+            public AClass() { }
+            public AClass(string engineChassisID, string colour, int length)
+            {
+                this.engineChassisID = engineChassisID;
+                this.Length = length;
+                this.Colour = colour;
+            }
+        }
+
+        class A104 : AClass
+        {
+            //different constructor : calling the base/parent constructor
+            public A104(string engineChassisID, string colour, int length = 2300) : base(engineChassisID, colour, length) { }
+        }
+    }
+}
+
+```
+
+Constructors are NOT inherited so child constructors MUST be excplicitly coded!
+
+# Constructor Summary
+Constructors just help us create new instances with MINIMUM work
+They are NOT inherited
+Default one is BLANK and is present initially. Must add it in if we create our own constructor and still want the default one present
+
+# Overloading
+Method01(){}
+
+Method01(int x){}
+
+Method01(string y){}
+
+Method01(int x, string y){}
+
+Overloads the same method.
+
+```cs
+using System;
+
+namespace lab_10_overloading
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Method01();
+            Method01(100);
+            Method01("hello");
+            Method01(1000, "goodbye");
+        }
+
+        static void Method01() { Console.WriteLine("blank"); }
+
+        static void Method01(int x) { Console.WriteLine(x); }
+
+        static void Method01(string y) { Console.WriteLine(y); }
+
+        static void Method01(int x, string y) { Console.WriteLine(x + " yeah"); }
+    }
+}
+```
+
+# Polymorphism
+
+Interviews :  favourite question
+
+Four pillars are OOP: 	1) Inheritance : Parent => Child class Child : Parent{}
+						2) Encapsulation: Private keyword to hide NINO data / engineChassisID
+						3) Abstraction : public getter and setter methods to access and manipulate private data
+							Picture   			
+								Driver			Accelerator Pedal			Encapsulated Combustion Engine
+							The driver is abstracted away from the engine by the middle layer (accelerator pedal)
+
+								Instance   		Public get/set 				Private Field	
+
+						4) Polymorphism
+
+Polymorphism:
+	
+	Picture : Family
+
+		Parents : virtual HaveAParty() { // Invite friends to dinner party }
+					(virtual == can override this idea if you want to (Optional))
+		Child5Yrs : override HaveAParty() { //Bouncy Castle }
+					(override == child can optionally replace method with their own version)
+		Child10Yrs : HaveAParty() { // Quasar }
+
+		Child18Yrs : HaveAParty() { // Evening out }
+
+	Side note: There are two keywords with similar uses here
+			a) override
+			b) new				
+
+# Rabbit Explosion
+
+Class Rabbit{
+	String Name
+	int Age
+
+}
+
+List<Rabbit> rabbits
+
+Thread.Sleep(200);
+
+Loop
+
+Every loop, create new rabbit and add to list of rabbits
+
+set population limit and see how many iterations it takes to reach population limit
+
+This will be version 1 and will be a linear relationship e.g. 50 iterations to reach population of 50
