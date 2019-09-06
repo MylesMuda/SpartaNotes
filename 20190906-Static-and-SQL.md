@@ -221,9 +221,14 @@ When you click the add button
 
 Create a textblock and do a foreach loop to output the rabbit data into this text block
 
+Needs to be linked with the database
+
 Ideas
 -----
 Add a timer?
 start adding our own rabdom rabbits
+do it using CANVAS, not GRID
+
+https://www.wpf-tutorial.com/panels/canvas/ //check this link
 
 Due Monday??
