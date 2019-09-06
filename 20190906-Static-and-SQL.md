@@ -160,5 +160,70 @@ If we begin using EF6, there is more support so it's easier to get going
 
 4) View rabbits
 
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace lab_19_rabbit_database_explosion
+{
+    class Program
+    {
+        static List<Rabbit> rabbits;
+        static void Main(string[] args)
+        {
+
+            using (var db = new RabbitDbEntities())
+            {
+                rabbits = db.Rabbits.ToList();
+            }
+
+            PrintRabbits();
+
+            var newRabbit = new Rabbit()
+            {
+                Age = 0,
+                Name = $"Jeff{rabbits.Count+2}"
+            };
+
+            using (var db = new RabbitDbEntities())
+            {
+                db.Rabbits.Add(newRabbit);
+                db.SaveChanges();
+            }
+
+            System.Threading.Thread.Sleep(200);
+            using ( var db = new RabbitDbEntities())
+            {
+                rabbits = db.Rabbits.ToList();
+                
+                PrintRabbits();
+            }
+            Console.ReadLine();   
+        }
+        static void PrintRabbits()
+        {
+            rabbits.ForEach(rabbit => Console.WriteLine($"{rabbit.RabbitId,-5}" + $"{rabbit.Name,-12}{rabbit.Age}"));
+        }
+    }
+}
 ```
 
+# Homework
+New WPF Just_Do_It_Rabbit_12_Explosion using the .net framework
+Add 2 text boxes (age and name) and an add button
+Add Entity 
+When you click the add button 
+	ADD a new rabbit
+	Display a rabbit picture for ONE SECOND
+
+Create a textblock and do a foreach loop to output the rabbit data into this text block
+
+Ideas
+-----
+Add a timer?
+start adding our own rabdom rabbits
+
+Due Monday??
