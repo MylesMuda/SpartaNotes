@@ -1,0 +1,7 @@
+Steps
+
+1) Make text in boxes be assigned to the values of two text blocks when the button is pressed (DONE)
+
+2) Connect the program to the database
+
+3) Make an image of a rabbit appear when the button is pressed, then disappear using Sytem.Threading.Thread.Sleep(); ???
