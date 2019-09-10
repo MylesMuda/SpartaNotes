@@ -1,0 +1,219 @@
+20190910-C#-Review
+
+#Agile Manifesto
+1) People over process
+2) Working software over documentation
+3) Collaboration over negotiation
+
+#Scrum: Sprint 1-4 weeks focused work
+PILLARS OF SCRUM
+1) Transparency
+2) Inspection
+3) Adaptation
+
+#SCRUM ROLES
+	Scrum master: admin, keeps focus, flow and removes any blockers
+	Project/Product owner: Owns the backlog, liase with customer
+	Devs: 3-9, self organising
+Backlog: A to-do list for the job, requirements for a complete project
+Sprint Backlog: mini-list of requirements to be completed within a sprint
+
+Goal of a sprint - Implement a new feature : release : new increment of a version
+	Version increments
+		Breaking change : ver 1.0, 2.0, 3.0 etc Code should BREAK/Not be compatible
+		Version increment: 3.1, 3.2 etc code should work
+
+#Waterfall : Traditional model : Good for fixed/small/repeatable projects unlikely to change. Buildings, bridges, Engineering, Military??
+	1) Requirements
+	2) Analysis
+	3) Design
+	4) Build
+	5) Test
+	6) Release
+	7) Maintain
+	8) Document
+
+V-Model: For CRITICAL grade systems where life is at stake, extra testing at each stage. 
+
+Unit Testing : test individual units (modules) of code (smallest level)
+
+Intergration Testing: join modules together
+
+System Testing : testing the overall system
+
+UAT User Acceptance Testing : user validates that our code meets the agreed 'list of requirements'
+
+Feasability Study : initial guidance for the client :  is the project feasable a) technically b) Financial
+
+Alpha Release : Initial release, often invitation only: Journalists, specialists, other stakeholders. 
+
+Beta Release : Final release before production version is ready; used to provide a) customers with free demo b) Production company gets free feedback 
+
+Regression Testing : ensures when you build a new feature or bug fix, this does not break existing code. 
+
+Black box : Inputs/Outputs only, know nothing about the code.
+
+White box : Allows testing with a detailed knowledge of the coding
+
+RGR RED GREEN REFACTOR: Build tests to fail, write code to pass those tests, optimise/maintain the code.
+
+Minify code : Make code as small as possible 
+jquery.js : original code
+jquery.min.js : minified code
+
+JIT Just in Time : 24/7 process, minimise warehouse waste
+
+Kanban: Workflow for continuous models. Limit the active work in progress at any one time
+
+#OOP
+---
+Fields: Private variable in a class `_likeThis`;
+Properties: Public variables with getters and setters (pascal case)
+Class: Blueprint for an object
+Methods: A function that completes a single small task (pascal case)
+Abstract Method : public abstract void DoThis(); HAS NO BODY
+Abstract Class: Class that contains an ABSTRACT METHOD
+	Can you instanciate ???
+	Can't instanciate abstract class, Must DERIVE a child class that implements all methods, then can be instanciated. 
+Constructor : New instance with minimum hard work (var instance = new class(1,2,3))
+overload : same method, different parameters
+Concrete class: can be instanciated, standard class, standard class. 
+PILLARS
+------- 
+Inheritance : Parent class with children that inherit fields and methods BASE CLASS and DERIVED CLASS
+Abstraction : Use PUBLIC properties to INTERACT with ENCAPSULATED Methods
+Polymorphism : Inherit functionality from base class with optional override
+Encapsulation : Private members in a class
+Member : fields, property, method, event within a class
+4 Access Modifiers: 1) Private 2) Public 3) Protected (parent and children) 4) Internal (exe/dll)
+
+# ABSTRACT
+Abstract CLASS 			:	A class with ONE or MORE abstract methods
+Abstract METHOD 		:	A method with no body or implementation
+Abstract (dictionary)	:	Concept, not tangible
+Abstract (OOP Pillar)	:	Public property, feeds into a private member, user is ABSTRACTED away from the private member by the public property
+Abstracted out of a situation : made distant from a situation
+
+#Struct
+A mini-class
+
+Only has fields which are FULLY PUBLIC, and any METHODS are fully public
+
+They are stored in the FAST MEMORY of the computer called the 'STACK' memory
+
+integers, Char, bool, byte (Primitive data types)
+e.g. Struct
+
+```cs
+using System;
+
+namespace lab_21_struct
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var s = new MyStruct();
+            var s2 = new MyStruct(10, 10, "yeah");
+            Console.WriteLine(s2.GetX());
+        }
+    }
+
+    class MyClass
+    {
+
+    }
+
+    struct MyStruct
+    {
+        private int x;
+        public int y;
+        public string z { get; set; }
+        public MyStruct(int X, int Y, string Z)
+        {
+            this.x = X;
+            this.y = Y;
+            this.z = Z;
+        }
+
+        public int GetX()
+        {
+            return this.x;
+        }
+    }
+}
+
+```
+# Collections
+	Arrays 	: Fixed Size
+			  In memory, every cell has unique, allocated memory address
+			  (Picture : Mail boxes with individual addess)
+			  Read/Write Data :  computer map RAM Address to array member
+			  Therefore NO time delay to find data item and read/write data
+			  #AFAGE = Array Start
+			  Pointer: +1 First member	
+			  Implements IEnumerable, means can count numerically over the array
+
+	Collections : Variable size
+			  Generics <T> where T references any data type
+			  int, string, bool, char, MyClass etc.
+
+			  List<int>
+			  List<rabbit>
+			  etc.
+
+		List<int>
+		 Index value like an array
+			  Able to insert/remove items from the ends or the middle of the list
+
+
+		Queue<int>
+		 Cannot get items out of the middle
+		 FIFO: Think Village, quiet bus-stop
+		 Enqueue: 	add a new person to the back of the queue
+		 Dequeue: 	take first person
+		 Peek: 		check first item
+		 Contains:	search for item (T/F)
+		 Uses:		Printing, Email, Batch-Processing
+
+		Stack<int>
+		 LIFO: Last in First Out
+		 Computers use the stack to order running code, every method is frozen other than the top method. Finished = "Peel off the stack"
+		 Push : 	put new item on stack
+		 Pop : 		pop off top item
+		 Peek : 	check top item
+		 Contains: 	Search for item
+
+		Dictionary<TKey, TValue>
+		 TKey must be unique : like a primary key
+
+		ArrayList (object)
+		 List of objects, any type goes
+
+		Hashset<int> fast but has no order
+		 Has unique values but has NO INDEX
+		 Fast to read and write, not indexed.
+		 It does not implement IEnumerable
+
+		LinkedList<object>
+
+# LINQ
+
+LINQ is a special language generated by microsoft to read databases.
+
+LINQ has two types
+	
+	//simple syntax
+	from c in customers
+	where c.City = "Berlin"
+	select c
+	
+	//lambda syntax
+	customers.Where(c=>c.City=="Berlin");
+
+# Getting started
+
+Microsoft have their own test database
+	1) Northwind => Business database with customers
+	2) Adventure Works
+

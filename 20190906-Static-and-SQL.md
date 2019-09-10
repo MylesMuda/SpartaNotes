@@ -97,7 +97,7 @@ Relational Databases
 
 	We can create relationships between two tables
 
-	User
+		User
 		UserID;
 		Username;
 		CategoryID; 	Foreign Key, ID from another table
