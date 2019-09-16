@@ -1,0 +1,44 @@
+Interview Prep
+
+JavaScript - A language that runs in the browser, also runs on a computer
+			 Also runs on a computer (node.js)
+
+Library - import code from other people
+getElement(s)ById/ClassName/Tag to find something. Find one element or an array of elements
+class - can have many items
+id - one item
+<p class ="myclass1 myclass2" /> CSS .myClass1
+<p id= "myId" /> #myId
+style tag 	CSS
+	INLINE  <p style="background-color:red"
+	INTERNAL <style> in head normally
+	EXTERNAL style.css link with <link href="style.css" rel="stylesheet"/>
+script tag
+	INLINE <button onclick="alert(hi);">
+	INTERNAL <script> </script> //MUST HAVE THE CLOSING TAB for scripts
+	EXTERNAL index.js
+Libraries
+	angular - google {{ data }}
+	react - facebook - render a virtual 'DOM'
+	jquery - old
+	vue - best of react and angular
+	lodash - arrays
+	momentJS - time/date
+
+DOM - DOCUMENT OBJECT MODEL - The structure of a HTML page.
+	HTML
+		BODY
+			DIV
+				H1
+				P
+
+Interview Success for tomorrow
+1) Person: Mark Paramor: LinkedIn ??? Experience, Current Role
+2) Accedo: Jobs on the internet: terminology & phrases
+3) Accedo: look at their website
+	a)products they sell
+	b) blog: current projects of interest, what's fresh?
+	c) people?? Numbers??
+	d) Location?? Global
+4) Channel 4 :: link given by jamie???
+5) Look at job specs sent by jamie on email
