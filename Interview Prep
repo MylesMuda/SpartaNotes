@@ -7,6 +7,7 @@ Library - import code from other people
 getElement(s)ById/ClassName/Tag to find something. Find one element or an array of elements
 class - can have many items
 id - one item
+```js
 <p class ="myclass1 myclass2" /> CSS .myClass1
 <p id= "myId" /> #myId
 style tag 	CSS
@@ -17,6 +18,7 @@ script tag
 	INLINE <button onclick="alert(hi);">
 	INTERNAL <script> </script> //MUST HAVE THE CLOSING TAB for scripts
 	EXTERNAL index.js
+```
 Libraries
 	angular - google {{ data }}
 	react - facebook - render a virtual 'DOM'
@@ -42,3 +44,71 @@ Interview Success for tomorrow
 	d) Location?? Global
 4) Channel 4 :: link given by jamie???
 5) Look at job specs sent by jamie on email
+
+# Job Specs Sent By Jamie:
+========================
+## JavaScript Role
+
+### General
+
+Software development of JS and other front end applications. Close relationship with overseas offices.
+
+1) I am Passionate about improving the efficiency of the software dev process through Agile methodology
+
+2) Accurate estimates and successful results after each dev cycle
+
+3) I care about software craftmanship, improving on the work that I have done and enjoy that process
+
+### Requirements
+
+1) Degree in comp sci (check)
+
+2) 1-5 yr's exp (not really, but at sparta to gain that experience)
+
+3) Good knowledge of performance and memory optimisations (look up on JS optimisations)
+
+4) Proficient with tools available in SDK's (gonna get that)
+
+5) Excellent debugging skills (das me)
+
+6) Proficient with source code management (something I am improving at and actively enjoying learning more about)
+
+7) Experience with agile methodologies (2nd year, phpMyAdmin, working at ING bank, shadowing departments morning standups and sitting in on scrum review)
+
+8) Interest in new technologies/platforms (talk about installing linux and enjoying switching between systems etc)
+
+9) Understanding of VOD, live streaming, DRM. (talk about knowledge of twitch/youtube, handling of copyright materials through music libraries)
+
+10) exp in TV industry a plus (nah)
+
+11) English LOL
+
+### Skills and Experience
+
+1) Extensive experience with JavaScript, HTML, CSS, AJAX, JQUERY (only HTML and some CSS)
+
+2) Good working knowledge of JavaScript frameworks (angular and react) (touched on angular, react and vue.js briefly, interested in how they work in industry)
+
+3) Server-Side Scripting (Node.js, express) (LOOK INTO NODE.JS)
+
+4) Grunt, Gulp, webpack?????? (nah)
+
+### personal requirements
+
+1) Love field of work (love for technology, coding. hardware, software bleeding edge) 
+
+2) cool project working on? (Show FYP, its something, hopefully they wont get it)
+
+3) Self motivated (yeah that's me)
+
+4) Work independently, part of a larger group
+
+5) sharing knowledge throughout the organisation
+
+6) Customer focused work (mention that being a pillar of Agile development or shove it into the answer for a question)
+
+## Rough notes on ROKU
+
+1) Study on APIs and Library intergration
+
+2) MAYBE touch on some brightscript
