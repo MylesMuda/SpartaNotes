@@ -39,3 +39,92 @@ Specification / signature of method is in/out parameter mix
 	Public event MyDelegate MyEvent;
 ```
 
+3. Attach methods to our event (must match given in/out structure)
+```cs
+	MyEvent += Method01; //Add methods to delegate
+	MyEvent += Method02;
+	...
+	MyEvent -= Method01; //Remove methods from delegate
+```
+
+# Trivial Example
+
+```cs
+using System;
+
+namespace lab_34_events
+{
+    class Program
+    {
+
+        public delegate void MyDelegate();
+
+        public static event MyDelegate MyEvent;
+
+        static void Main(string[] args)
+        {
+            MyEvent += MethodA; //Callback: A pointer to a method but don't call the method right away.            
+            MyEvent += MethodB;            
+            MyEvent += MethodC;
+            MyEvent();
+            MyEvent -= MethodA;
+            MyEvent();
+        }
+
+        static void MethodA() { Console.WriteLine("Method A"); }
+        static void MethodB() { Console.WriteLine("Method B"); }
+        static void MethodC() { Console.WriteLine("Method C"); }
+    }
+}
+```
+# OOP Example with instances
+
+```cs
+using System;
+
+namespace lab_35_oop_events
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var Jame = new Child();
+            Jame.Name = "Jame";
+            Jame.Grow("NO");
+
+            for(int i = 0; i < 10; i++)
+            {
+                Jame.Grow($"SPACE {i}");
+            }
+        }
+
+        class Child
+        {
+            public delegate int BirthdayDelegate(string TypeOfParty);
+            public event BirthdayDelegate HaveBirthday;
+
+            public string Name { get; set; }
+            public int Age { get; set; }
+
+            public Child()
+            {
+                this.Age = 0;
+                Console.WriteLine("Congratulations, BEAUTIFUL baby :)");
+                HaveBirthday += Celebrate;
+            }
+
+            int Celebrate(string TypeOfParty)
+            {
+                Age++; //one year older
+                Console.WriteLine($"Celebrating yet another birthday! Age: {Age} Type of Party: {TypeOfParty}");
+                return Age;
+            }
+
+            public void Grow(string TypeOfParty)
+            {
+                int ageNow = HaveBirthday(TypeOfParty);
+            }
+        }
+    }
+}
+```
