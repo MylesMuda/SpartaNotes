@@ -49,6 +49,7 @@ CHANGE LOCAL
 
 1) Create an account with netlify.com
 2) go to gatsbyjs.org for the website starter packs
+3) YARN ADD GATSBY
 
 Homework
     a) Rebuild a couple of flexboxes
