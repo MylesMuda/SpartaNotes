@@ -1,0 +1,131 @@
+# SQL
+
+## SQL theory terms
+
+## 4 Categories
+
+DML Data Manipulation Language
+
+    Basic Queries : SELECT, INSERT, UPDATE, DELETE
+
+DDL Data Definition Language
+
+    Create Data Structures ie. Database, Table
+        CREATE/DROP     : database and table ie. add or remove completely
+        ALTER           : Table ie. add key/column
+        TRUNCATE        : remove
+
+DCL Data Control Language
+
+    Permissions         : GRANT/REVOKE
+
+TCL Transaction Control Language
+
+    Group of transactions TOGETHER
+        1) COMMIT (all of the transactions in the group as a whole eg. ATM Withdrawal is either ALL COMMIT or nothing)
+        2) ROLLBACK to a given point e.g. Start of transaction group
+        3) SAVEPOINT : Midway point of saving data progression throughout a series of transactions
+
+## Basic Commands
+
+```sql
+use db01    // bring into scope
+go
+drop database db01   //risk of exeption if no db present
+drop database if exists db01
+go
+create database db01
+go
+```
+
+## Data Types
+
+    INT
+    TINYINT
+    CHAR(5)                 FIXED WIDTH IE CUSTOMERID='ALFKI', 8 BIT
+    VARCHAR(50)             VARIABLE WIDTH UP TO 50 MAX, 8 BIT
+    BIT                     0,1 OR NULL
+    NCHAR/NVARCHAR          UNICODE IE 16 BIT
+    TIME/DATETIME
+    BLOB/BINARY             BINARY LARGE OBJECT E.g Movie.mov
+    FLOAT
+    DECIMAL
+
+## Getting Help
+
+```sql
+# meta data about your table
+SP_HELP
+```
+
+## Top
+
+```sql
+select top 5 * from customers order by CustomerID desc;
+```
+
+## Select where ... and...
+
+```sql
+select * from Products
+where UnitsInStock < 10 and Discontinued = 0
+order by UnitsInStock desc;
+```
+
+## Operators
+
+    AND OR
+    <> or !=
+    > < >= <=
+
+## select distinct
+
+```sql
+select country from customers order by country;
+select distinct country from customers order by country;
+```
+
+## Contains ==> 'like' keyword
+
+```sql
+--Does it contain abc?
+like '%abc%'
+--Start
+like 'abc%'
+--End
+like '%abc'
+--Does NOT contain
+not like '%abc%'
+```
+
+## Multiple Exact hits - use 'IN' keyword
+
+```sql
+select * from employees where region in('wa','bc')
+```
+
+## Between A and B
+
+```sql
+select * from products where unitprice between 10 and 20
+```
+
+## Cumulative Functions
+
+    Sum, Count, Average, Min, Max
+
+```sql
+select count(city) from Customers;
+select AVG(UnitPrice) as AVGPrice, MIN(UnitPrice) as MINPrice, MAX(UnitPrice) as MAXPrice from Products
+select SUM(Unitsinstock) as TotalStock from Products;
+```
+
+## Maths
+
+Easy to do mathematical operations inside the query
+
+e.g. Product discount
+
+    £100 with 10% discount ==> £90
+
+    //Get product, price, discount, price after discount
