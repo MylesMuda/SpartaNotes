@@ -122,10 +122,47 @@ select SUM(Unitsinstock) as TotalStock from Products;
 
 ## Maths
 
-Easy to do mathematical operations inside the query
+### Easy to do mathematical operations inside the query
 
-e.g. Product discount
+### e.g. Product discount
 
     £100 with 10% discount ==> £90
 
     //Get product, price, discount, price after discount
+
+## charindex
+
+    charindex(' ', 'BRZ 4AZ') returns 5, the index of the space
+
+    LTRIM removes leading spaces
+
+    Replace('some text', 'text', 'cheese') returns 'some cheese'
+
+    UPPER
+
+    lower
+
+## case ... when ... else
+
+    case
+    when (x>10)
+    else 'young'
+    end
+    as 'how old are you?'
+
+## group by... having
+
+### Order by only works for fields which exist initially but not on commulative fields
+
+    We can find the sum of all units in stock per product category but this field does not exist initially so we can't order by it.
+
+    Cumulative fields ie SUM/MAX/MIN/AVG/COUNT
+    Group by... (selecting into branches)
+    Having... (same as order by)
+
+### Order Matters
+
+    SELECT DISTINCT FROM WHERE...
+    GROUP BY... HAVING...
+    ORDER BY...
+
