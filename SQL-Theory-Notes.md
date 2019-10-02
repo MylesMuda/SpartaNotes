@@ -152,6 +152,14 @@ select SUM(Unitsinstock) as TotalStock from Products;
 
 ## group by... having
 
+```sql
+select 'GROUP BY';
+select SupplierID, sum(UnitsOnOrder) as 'Total Units in Order' from products
+group by SupplierID
+having sum(UnitsOnOrder) = 0
+order by 'Total Units in Order' desc;
+```
+
 ### Order by only works for fields which exist initially but not on commulative fields
 
     We can find the sum of all units in stock per product category but this field does not exist initially so we can't order by it.
@@ -166,3 +174,41 @@ select SUM(Unitsinstock) as TotalStock from Products;
     GROUP BY... HAVING...
     ORDER BY...
 
+## As select ... as
+
+    SELECT (calculation) as 'columnname'
+    AS IS OPTIONAL
+    SELECT (calculation) 'columnname'
+
+## Joins
+
+    Inner join = Left join
+
+        table 1         table 2
+        tableID-1       tableID-2
+
+        All from table 1, plus matching from table 2 where there is a match
+
+### Outer Joins
+
+    All from table 2 plus matching records in table 1
+
+### Full Join
+
+    All from table 1 plus all from table 2 and null if no matching record in table 2
+
+### Sub queries
+
+    A Query within a Query : useful for long queries
+
+```sql
+-- FIND CUSTOMERS WITH NO ORDERS
+select ... from ... where (select ... from ...)
+select * from customers where CustomerID not in (select customerID from orders)
+```
+
+### Extra Terms
+
+IDENTITY(1,1)           Auto-increment starting at value 1 and jump by 1 each line
+IDENTITY                Auto-increment
+PRIMARY KEY CLUSTERED   

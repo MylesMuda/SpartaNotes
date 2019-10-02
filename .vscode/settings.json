@@ -1,0 +1,13 @@
+{
+    "sqltools.connections": [
+        {
+            "database": "Northwind",
+            "dialect": "MSSQL",
+            "name": "localhost, 1443",
+            "password": "Passw0rd2018",
+            "port": 1433,
+            "server": "localhost",
+            "username": "SA"
+        }
+    ]
+}
