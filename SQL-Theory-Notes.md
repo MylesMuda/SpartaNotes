@@ -86,7 +86,7 @@ select distinct country from customers order by country;
 ```
 
 ## Contains ==> 'like' keyword
-
+**
 ```sql
 --Does it contain abc?
 like '%abc%'
